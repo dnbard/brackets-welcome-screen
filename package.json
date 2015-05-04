@@ -1,0 +1,13 @@
+{
+    "name": "dnbard.welcome-screen",
+    "title": "Welcome Screen",
+    "description": "",
+    "homepage": "",
+    "version": "0.1.0",
+    "author": "Alex Bardanov",
+    "license": "MIT",
+    "engines": {
+        "brackets": ">=1.1.0"
+    },
+    "keywords": ["document", "toolbar", "panel", "file", "tabs"]
+}
