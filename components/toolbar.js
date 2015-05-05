@@ -11,9 +11,14 @@ define(function(require, exports, module){
             }
         },
         componentDidMount: function(){
-            ProjectsStore.bind('changed', function(projects){
+            this.onProjectsUpdate = function(projects){
                 this.setState({ projects: projects });
-            }.bind(this));
+            }.bind(this);
+
+            ProjectsStore.bind('changed', this.onProjectsUpdate);
+        },
+        componentWillUnmount: function(){
+            ProjectsStore.unbind('changed', this.onProjectsUpdate);
         },
         render: function(){
             return DOM.div({ className: 'ws-toolbar'},[

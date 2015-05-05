@@ -13,8 +13,6 @@ define(function(require){
             requiredProjects[i - 1] = parsePath(FileUtils.stripTrailingSlash(ProjectManager.updateWelcomeProjectPath(recentProjects[i] + "/")));
         }
 
-        console.log(requiredProjects);
-
         return requiredProjects;
     }
 
