@@ -36,6 +36,13 @@ define(function(require){
 
     function ProjectsStore(){
         this.projects = getProjectList();
+
+        ProjectManager.on('projectOpen', function(){
+            setTimeout(function(){
+                this.projects = getProjectList();
+                this.trigger('changed', this.projects);
+            }.bind(this), 100);
+        }.bind(this));
     };
 
     return microEvent.mixin(new ProjectsStore());

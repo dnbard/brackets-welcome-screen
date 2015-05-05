@@ -6,21 +6,20 @@ define(function(require, exports, module){
 
     var Screen = React.createClass({
         getInitialState: function(){
-            return {
-                visible: DocumentsStore.numberOfOpenFiles === 0
-            }
+            return { visible: true }
         },
         componentWillMount: function(){
             DocumentsStore.bind('changedOpenFiles', function(numberOfOpenFiles){
                 this.setState({ visible: numberOfOpenFiles === 0 });
             }.bind(this));
         },
+        onClose: function(){
+            this.setState({ visible: false });
+        },
         render: function(){
             if (this.state.visible){
-                return DOM.div({
-                    className: 'ws-inner'
-                }, [
-                    ToolbarComponent()
+                return DOM.div({ className: 'ws-inner' }, [
+                    ToolbarComponent({ onClose: this.onClose })
                 ]);
             } else {
                 return DOM.div({ style:{ display: 'none' } });
