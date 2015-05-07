@@ -65,11 +65,22 @@
         padding-left: 5px;
         font-size: 11pt;
         margin: 4px 0;
+
+        .ws-option__highlight{
+            color: white;
+            font-weight: bold;
+        }
     }
 
     .ws-project{
-        padding-left: 5px;
+        padding: 1px 4px 1px 8px;
         margin: 4px 0;
+        cursor: pointer;
+        transition: background 0.25s;
+    }
+
+    .ws-project:hover{
+        background: #1d1d1d;
     }
 
     .ws-project__name{

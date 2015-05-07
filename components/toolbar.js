@@ -27,11 +27,20 @@ define(function(require, exports, module){
                     DOM.span({ className: 'ws-logo__icon' })),
                 DOM.div({ className: 'ws-header' }, 'Start'),
                 DOM.div({}, [
-                    DOM.div({ className: 'ws-option' }, 'Open a Project'),
-                    DOM.div({ className: 'ws-option' }, 'Choose a Theme'),
-                    DOM.div({ className: 'ws-option' }, 'Learn some Shortcuts')
+                    DOM.div({ className: 'ws-option' }, [
+                        'Open a ',
+                        DOM.span({ className: 'ws-option__highlight' },'Project')
+                    ]),
+                    DOM.div({ className: 'ws-option' }, [
+                        'Choose a ',
+                        DOM.span({ className: 'ws-option__highlight' }, 'Theme')
+                    ]),
+                    DOM.div({ className: 'ws-option' }, [
+                        'Learn some ',
+                        DOM.span({ className: 'ws-option__highlight' }, 'Shortcuts')
+                    ]),
                 ]),
-                DOM.div({ className: 'ws-header' }, 'Recent'),
+                DOM.div({ className: 'ws-header' }, 'Recent Projects'),
                 DOM.div({}, this.state.projects.map(function(project){
                     return ProjectComponent({ name: project.folder, path: project.path });
                 }))
