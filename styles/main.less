@@ -73,14 +73,37 @@
     }
 
     .ws-project{
-        padding: 1px 4px 1px 8px;
+        position: relative;
+        padding: 1px 0;
         margin: 4px 0;
         cursor: pointer;
         transition: background 0.25s;
+        overflow: hidden;
     }
 
     .ws-project:hover{
         background: #1d1d1d;
+    }
+
+    .ws-project__logo{
+        background: red;
+        display: inline-block;
+        width: 32px;
+        height: 32px;
+        text-align: center;
+        font-weight: bold;
+        font-size: 20pt;
+        box-sizing: border-box;
+        padding-top: 6px;
+        color: black;
+    }
+
+    .ws-project__inner{
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin-left: 32px;
+        padding-left: 4px;
     }
 
     .ws-project__name{

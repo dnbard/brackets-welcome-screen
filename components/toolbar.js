@@ -41,7 +41,7 @@ define(function(require, exports, module){
                     ]),
                 ]),
                 DOM.div({ className: 'ws-header' }, 'Recent Projects'),
-                DOM.div({}, this.state.projects.map(function(project){
+                DOM.div({ className: 'ws-projects' }, this.state.projects.map(function(project){
                     return ProjectComponent({ name: project.folder, path: project.path });
                 }))
             ]);
