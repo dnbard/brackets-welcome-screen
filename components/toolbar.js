@@ -2,7 +2,8 @@ define(function(require, exports, module){
     var React = brackets.getModule('thirdparty/react'),
         DOM = React.DOM,
         ProjectsStore = require('../stores/projects'),
-        ProjectComponent = require('./project');
+        ProjectComponent = require('./project'),
+        NewStore = require('../stores/news');
 
     var Toolbar = React.createClass({
         getInitialState: function(){
